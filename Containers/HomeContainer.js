@@ -5,7 +5,8 @@ import {
 	StyleSheet
 } from 'react-native';
 import { connect } from 'react-redux';
-import { increaseCounter, addItem } from '../Redux/actions/'
+import { increaseCounter, addItem } from '../Redux/actions/';
+import { Actions } from 'react-native-router-flux';
 import WordList from '../Components/WordList';
 import AddNewWordInput from '../Components/AddNewWordInput';
 
@@ -20,6 +21,7 @@ class HomeContainer extends Component {
 				<WordList words={items} />
 				<Text>Current item count: {items.length}</Text>
 				<Text onPress={() => this.props.onAddNewItem('This is a value')}>Add new item</Text>
+				<Text onPress={Actions.settings}>Settings</Text>
 			</View>
 		)
 	}
